@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: app-pod
+  namespace: dev
+    leblel:
+       app: myapp
+       type: front-end
+spec:
+  containers:
+    - name : nginx-dkt-container
+      image: nginx
+
+    - name: backend-container
+      image: radis

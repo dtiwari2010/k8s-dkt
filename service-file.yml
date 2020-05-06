@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: myapp-service
+
+spec:
+   type: NodePort
+   ports:
+     - targetPort: 80
+       port: 80
+       nodePort: 30008
+   seclector:
+       app: myapp
+       type: front-end
+
+
+
+##If we don't define nodePort:30008
+##then K8s autometically ramdomly free port between 30000 to 32767
